@@ -1,36 +1,29 @@
 package com.example.aula7_final
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
+import butterknife.OnClick
 import kotlinx.android.synthetic.main.activity_main.*
-import net.objecthunter.exp4j.ExpressionBuilder
-import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.ArrayList
+import kotlinx.android.synthetic.main.fragment_calculator.*
 
 const val EXTRA_HISTORY = "com.example.aula7_final"
 
 class MainActivity : AppCompatActivity() {
 
-    private val TAG = MainActivity::class.java.simpleName
 
-    val operations = mutableListOf(Operation("1+1",2.0),Operation("2+3",5.0))
 
     private val VISOR_KEY = "visor"
 
-    var text = SimpleDateFormat("HH:mm:ss").format(Date())
-    private val duration = Toast.LENGTH_SHORT
-    var lastExpression = ""
+    private val TAG = MainActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i(TAG,"o metodo onCreate foi invocado")
         setContentView(R.layout.activity_main)
+        NavigationManager.goToCalculatorFragment(supportFragmentManager)
 
     /*val orientation = getResources().getConfiguration().orientation
     if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -167,60 +160,8 @@ class MainActivity : AppCompatActivity() {
     }*/
 }
 
-
-    fun onClickLast(view: View){
-        Log.i(TAG,"Click no botão Ultima Conta")
-        text_visor.text = lastExpression
-    }
-
-    fun onClickClear(view: View){
-        Log.i(TAG,"Click no botão C")
-        text_visor.text = "0"
-        val toast = Toast.makeText(this, "$text button_clear", duration)
-        toast.show()
-    }
-
-    fun onClickBackSpace(view: View){
-        Log.i(TAG,"Click no botão >")
-        var str = text_visor.text
-        if(str.length > 1) {
-            str = str.substring(0,str.length - 1)
-            text_visor.text = str
-        } else if(str.length <= 1){
-            text_visor.text = "0"
-        }
-        val toast = Toast.makeText(this, "$text button_backspace", duration)
-        toast.show()
-    }
-
-    fun onClickSymbol(view: View){
-        val symbol = view.tag.toString()
-        if(text_visor.text == "0"){
-            text_visor.text = symbol
-        } else{
-            text_visor.append(symbol)
-        }
-    }
-
-    fun onClickEquals(view : View){
-        lastExpression = text_visor.text.toString()
-        Log.i(TAG,"Click no botão =")
-        val expression = ExpressionBuilder(text_visor.text.toString()).build()
-        val result = expression.evaluate()
-        text_visor.text = result.toString()
-        operations.add(Operation(lastExpression, result))
-        Log.i(TAG, "O resultado da expressão é ${text_visor.text}")
-        val toast = Toast.makeText(this, "$text button_equals", duration)
-        toast.show()
-    }
-
-    override fun onDestroy() {
-        Log.i(TAG,"o método onDestroy foi invocado")
-        super.onDestroy()
-    }
-
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-    text_visor.text = savedInstanceState.getString(VISOR_KEY)
+        text_visor.text = savedInstanceState.getString(VISOR_KEY)
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
@@ -228,12 +169,9 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState, outPersistentState)
     }
 
-
+    @OnClick(R.id.button_history)
     fun onClickHistory(view: View){
-        val intent = Intent(this, HistoryActivity::class.java)
-        intent.apply { putParcelableArrayListExtra(EXTRA_HISTORY, ArrayList(operations)) }
-        startActivity(intent)
-        finish()
+        NavigationManager.goToHistoryFragment(supportFragmentManager)
     }
 
 }
@@ -241,11 +179,11 @@ class MainActivity : AppCompatActivity() {
 
 /*class HistoryAdapter(context: Context, private val layout: Int, private val items: MutableList<Operation>) : ArrayAdapter<Operation>(context, layout, items) {
 
-override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-val view = convertView ?: LayoutInflater.from(context).inflate(layout,parent,false)
-view.text_expression.text = getItem(position)?.expresssion
-view.text_result.text = getItem(position)?.result.toString()
-return view
-}
-}
-*/
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val view = convertView ?: LayoutInflater.from(context).inflate(layout,parent,false)
+        view.text_expression.text = getItem(position)?.expresssion
+        view.text_result.text = getItem(position)?.result.toString()
+        return view
+        }
+    }
+}*/

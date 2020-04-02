@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aula6_final</string>
+    <string name="app_name">Aula7_final</string>
     <string name="clear">CE</string>
     <string name="backspace"><![CDATA[<]]></string>
     <string name="multiplication">*</string>
@@ -18,4 +18,17 @@
     <string name="dot">.</string>
     <string name="equals">=</string>
     <string name="adition">+</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ver_ultima_conta">Ultima Conta</string>
+    <string name="ver_historico">Ver Historico</string>
+
+    <string name="calculator">Calculadora</string>
+    <string name="history">Histórico</string>
+    <string name="other">Outros</string>
+    <string name="sign_out">Sair</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="title">Title</string>
+    <string name="Navigation_drawer">This is our navigation drawer</string>
 </resources>
