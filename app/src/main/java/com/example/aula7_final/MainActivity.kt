@@ -32,140 +32,140 @@ class MainActivity : AppCompatActivity() {
         Log.i(TAG,"o metodo onCreate foi invocado")
         setContentView(R.layout.activity_main)
 
-        val orientation = getResources().getConfiguration().orientation
-        /*if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            list_historic.adapter = HistoryAdapter(this, R.layout.item_expression, operations)
-        }*/
-
-/*
-        button_division.setOnClickListener{
-            Log.i(TAG, "Click no botão /")
-            onClickSymbol("/")
-            val toast = Toast.makeText(this, "$text button_division", duration)
-            toast.show()
-            //text_visor.append("!")
-        }
-
-        button_multiplication.setOnClickListener {
-            Log.i(TAG,"Click no botão *")
-            onClickSymbol("*")
-            val toast = Toast.makeText(this, "$text button_multiplication", duration)
-            toast.show()
-            //text_visor.append("?")
-        }
-
-        button_subtraction.setOnClickListener {
-            Log.i(TAG,"Click no botão -")
-            onClickSymbol("-")
-            val toast = Toast.makeText(this, "$text button_#", duration)
-            toast.show()
-            //text_visor.append("#")
-        }
-
-        button_adition.setOnClickListener{
-            Log.i(TAG, "Click no botão +")
-            onClickSymbol("+")
-            val toast = Toast.makeText(this, "$text button_adition", duration)
-            toast.show()
-        }
-
-        button_9.setOnClickListener{
-            Log.i(TAG,"Click no botão 7")
-            onClickSymbol("9")
-            val toast = Toast.makeText(this, "$text button_6", duration)
-            toast.show()
-        }
-
-        button_8.setOnClickListener{
-            Log.i(TAG,"Click no botão 5")
-            onClickSymbol("8")
-            val toast = Toast.makeText(this, "$text button_5", duration)
-            toast.show()
-        }
-
-        button_7.setOnClickListener{
-            Log.i(TAG,"Click no botão 7")
-            onClickSymbol("7")
-            val toast = Toast.makeText(this, "$text button_4", duration)
-            toast.show()
-        }
-
-        button_6.setOnClickListener{
-            Log.i(TAG,"Click no botão 6")
-            onClickSymbol("6")
-            val toast = Toast.makeText(this, "$text button_6", duration)
-            toast.show()
-        }
-
-        button_5.setOnClickListener{
-            Log.i(TAG,"Click no botão 5")
-            onClickSymbol("5")
-            val toast = Toast.makeText(this, "$text button_5", duration)
-            toast.show()
-        }
-
-        button_4.setOnClickListener{
-            Log.i(TAG,"Click no botão 4")
-            onClickSymbol("4")
-            val toast = Toast.makeText(this, "$text button_4", duration)
-            toast.show()
-        }
-
-        button_3.setOnClickListener{
-            Log.i(TAG,"Click no botão 3")
-            onClickSymbol("3")
-            val toast = Toast.makeText(this, "$text button_3", duration)
-            toast.show()
-        }
-
-        button_2.setOnClickListener{
-            Log.i(TAG,"Click no botão 2")
-            onClickSymbol("2")
-            val toast = Toast.makeText(this, "$text button_2", duration)
-            toast.show()
-        }
-
-        button_1.setOnClickListener{
-            Log.i(TAG,"Click no botão 1")
-            onClickSymbol("1")
-            val toast = Toast.makeText(this, "$text button_1", duration)
-            toast.show()
-        }
-
-        button_0.setOnClickListener{
-            Log.i(TAG,"Click no botão 0")
-            onClickSymbol("0")
-            val toast = Toast.makeText(this, "$text button_0", duration)
-            toast.show()
-        }
-
-        button_dot.setOnClickListener{
-            Log.i(TAG,"Click no botão .")
-            onClickSymbol(".")
-            val toast = Toast.makeText(this, "$text button_dot", duration)
-            toast.show()
-        }
-
-        button_clear.setOnClickListener{
-
-        }
-
-        button_backspace.setOnClickListener{
-
-        }
-
-        button_equals.setOnClickListener { onClickEquals() }
-
-        button_last.setOnClickListener {
-
-        }
-
-        if(orientation == Configuration.ORIENTATION_PORTRAIT){
-            button_history.setOnClickListener {
-                onClickHistory()
-            }
-        }*/
+    /*val orientation = getResources().getConfiguration().orientation
+    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+        list_historic.adapter = HistoryAdapter(this, R.layout.item_expression, operations)
     }
+
+
+    button_division.setOnClickListener{
+        Log.i(TAG, "Click no botão /")
+        onClickSymbol("/")
+        val toast = Toast.makeText(this, "$text button_division", duration)
+        toast.show()
+        //text_visor.append("!")
+    }
+
+    button_multiplication.setOnClickListener {
+        Log.i(TAG,"Click no botão *")
+        onClickSymbol("*")
+        val toast = Toast.makeText(this, "$text button_multiplication", duration)
+        toast.show()
+        //text_visor.append("?")
+    }
+
+    button_subtraction.setOnClickListener {
+        Log.i(TAG,"Click no botão -")
+        onClickSymbol("-")
+        val toast = Toast.makeText(this, "$text button_#", duration)
+        toast.show()
+        //text_visor.append("#")
+    }
+
+    button_adition.setOnClickListener{
+        Log.i(TAG, "Click no botão +")
+        onClickSymbol("+")
+        val toast = Toast.makeText(this, "$text button_adition", duration)
+        toast.show()
+    }
+
+    button_9.setOnClickListener{
+        Log.i(TAG,"Click no botão 7")
+        onClickSymbol("9")
+        val toast = Toast.makeText(this, "$text button_6", duration)
+        toast.show()
+    }
+
+    button_8.setOnClickListener{
+        Log.i(TAG,"Click no botão 5")
+        onClickSymbol("8")
+        val toast = Toast.makeText(this, "$text button_5", duration)
+        toast.show()
+    }
+
+    button_7.setOnClickListener{
+        Log.i(TAG,"Click no botão 7")
+        onClickSymbol("7")
+        val toast = Toast.makeText(this, "$text button_4", duration)
+        toast.show()
+    }
+
+    button_6.setOnClickListener{
+        Log.i(TAG,"Click no botão 6")
+        onClickSymbol("6")
+        val toast = Toast.makeText(this, "$text button_6", duration)
+        toast.show()
+    }
+
+    button_5.setOnClickListener{
+        Log.i(TAG,"Click no botão 5")
+        onClickSymbol("5")
+        val toast = Toast.makeText(this, "$text button_5", duration)
+        toast.show()
+    }
+
+    button_4.setOnClickListener{
+        Log.i(TAG,"Click no botão 4")
+        onClickSymbol("4")
+        val toast = Toast.makeText(this, "$text button_4", duration)
+        toast.show()
+    }
+
+    button_3.setOnClickListener{
+        Log.i(TAG,"Click no botão 3")
+        onClickSymbol("3")
+        val toast = Toast.makeText(this, "$text button_3", duration)
+        toast.show()
+    }
+
+    button_2.setOnClickListener{
+        Log.i(TAG,"Click no botão 2")
+        onClickSymbol("2")
+        val toast = Toast.makeText(this, "$text button_2", duration)
+        toast.show()
+    }
+
+    button_1.setOnClickListener{
+        Log.i(TAG,"Click no botão 1")
+        onClickSymbol("1")
+        val toast = Toast.makeText(this, "$text button_1", duration)
+        toast.show()
+    }
+
+    button_0.setOnClickListener{
+        Log.i(TAG,"Click no botão 0")
+        onClickSymbol("0")
+        val toast = Toast.makeText(this, "$text button_0", duration)
+        toast.show()
+    }
+
+    button_dot.setOnClickListener{
+        Log.i(TAG,"Click no botão .")
+        onClickSymbol(".")
+        val toast = Toast.makeText(this, "$text button_dot", duration)
+        toast.show()
+    }
+
+    button_clear.setOnClickListener{
+
+    }
+
+    button_backspace.setOnClickListener{
+
+    }
+
+    button_equals.setOnClickListener { onClickEquals() }
+
+    button_last.setOnClickListener {
+
+    }
+
+    if(orientation == Configuration.ORIENTATION_PORTRAIT){
+        button_history.setOnClickListener {
+            onClickHistory()
+        }
+    }*/
+}
 
 
     fun onClickLast(view: View){
@@ -220,7 +220,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        text_visor.text = savedInstanceState.getString(VISOR_KEY)
+    text_visor.text = savedInstanceState.getString(VISOR_KEY)
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
@@ -241,11 +241,11 @@ class MainActivity : AppCompatActivity() {
 
 /*class HistoryAdapter(context: Context, private val layout: Int, private val items: MutableList<Operation>) : ArrayAdapter<Operation>(context, layout, items) {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: LayoutInflater.from(context).inflate(layout,parent,false)
-        view.text_expression.text = getItem(position)?.expresssion
-        view.text_result.text = getItem(position)?.result.toString()
-        return view
-    }
+override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+val view = convertView ?: LayoutInflater.from(context).inflate(layout,parent,false)
+view.text_expression.text = getItem(position)?.expresssion
+view.text_result.text = getItem(position)?.result.toString()
+return view
+}
 }
 */
