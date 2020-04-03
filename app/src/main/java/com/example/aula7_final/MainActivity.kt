@@ -13,8 +13,6 @@ const val EXTRA_HISTORY = "com.example.aula7_final"
 
 class MainActivity : AppCompatActivity() {
 
-
-
     private val VISOR_KEY = "visor"
 
     private val TAG = MainActivity::class.java.simpleName
@@ -172,6 +170,7 @@ class MainActivity : AppCompatActivity() {
     @OnClick(R.id.button_history)
     fun onClickHistory(view: View){
         NavigationManager.goToHistoryFragment(supportFragmentManager)
+        view.id.toString()
     }
 
 }

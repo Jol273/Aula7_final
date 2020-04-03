@@ -23,9 +23,9 @@ class CalculatorFragment : Fragment() {
 
     val operations = mutableListOf(Operation("1+1",2.0),Operation("2+3",5.0))
 
-    /*
+
     var text = SimpleDateFormat("HH:mm:ss").format(Date())
-    private val duration = Toast.LENGTH_SHORT*/
+    private val duration = Toast.LENGTH_SHORT
 
     var lastExpression = ""
 
