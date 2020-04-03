@@ -4,14 +4,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import butterknife.OnClick
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_calculator.*
 
 const val EXTRA_HISTORY = "com.example.aula7_final"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
     private val VISOR_KEY = "visor"
 
@@ -21,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.i(TAG,"o metodo onCreate foi invocado")
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
+        setupDrawerMenu()
         NavigationManager.goToCalculatorFragment(supportFragmentManager)
 
     /*val orientation = getResources().getConfiguration().orientation
@@ -158,6 +164,21 @@ class MainActivity : AppCompatActivity() {
     }*/
 }
 
+    private fun setupDrawerMenu(){
+        val toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close)
+        nav_drawer.setNavigationItemSelectedListener(this)
+        drawer.addDrawerListener(toggle)
+        toggle.syncState()
+    }
+
+    override fun onBackPressed() {
+        if(drawer.isDrawerOpen(GravityCompat.START))
+            drawer.closeDrawer(GravityCompat.START)
+        if(supportFragmentManager.backStackEntryCount == 1) finish()
+        super.onBackPressed()
+    }
+
+
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         text_visor.text = savedInstanceState.getString(VISOR_KEY)
     }
@@ -173,16 +194,13 @@ class MainActivity : AppCompatActivity() {
         view.id.toString()
     }
 
-}
-
-
-/*class HistoryAdapter(context: Context, private val layout: Int, private val items: MutableList<Operation>) : ArrayAdapter<Operation>(context, layout, items) {
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: LayoutInflater.from(context).inflate(layout,parent,false)
-        view.text_expression.text = getItem(position)?.expresssion
-        view.text_result.text = getItem(position)?.result.toString()
-        return view
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.nav_calculator -> NavigationManager.goToCalculatorFragment(supportFragmentManager)
         }
+        drawer.closeDrawer(GravityCompat.START)
+        return true
     }
-}*/
+
+
+}

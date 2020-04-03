@@ -13,6 +13,8 @@ import kotlinx.android.synthetic.main.activity_history.*
 
 class HistoryActivity : Fragment() {
 
+    val operations = mutableListOf(Operation("1+1",2.0),Operation("2+3",5.0))
+
     /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_history)
@@ -24,10 +26,10 @@ class HistoryActivity : Fragment() {
     }*/
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val operations = intent.getParcelableArrayListExtra<Operation>(EXTRA_HISTORY)
+        //val operations = intent.getParcelableArrayListExtra<Operation>(EXTRA_HISTORY)
 
         list_historic.layoutManager = LinearLayoutManager(activity as Context)
-        //list_historic.adapter = HistoryAdapter(this,R.layout.item_expression,operations)
+        list_historic.adapter = HistoryAdapter(activity as Context,R.layout.item_expression,operations)
 
         return inflater.inflate(R.layout.activity_history,container,false)
         //return super.onCreateView(inflater, container, savedInstanceState)
