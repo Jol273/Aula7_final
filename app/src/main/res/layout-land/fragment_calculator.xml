@@ -25,7 +25,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_weight="8"
+            android:layout_weight="10"
             android:weightSum="4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -44,6 +44,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_8"
+                    android:tag="@string/_8"
                     />
 
                 <Button
@@ -52,6 +53,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_9"
+                    android:tag="@string/_9"
                     />
 
                 <Button
@@ -76,6 +78,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/division"
+                    android:tag="@string/division"
                     />
             </LinearLayout>
 
@@ -92,6 +95,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_4"
+                    android:tag="@string/_4"
                     />
 
                 <Button
@@ -100,6 +104,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_5"
+                    android:tag="@string/_5"
                     />
 
                 <Button
@@ -108,6 +113,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_6"
+                    android:tag="@string/_6"
                     />
 
                 <Button
@@ -116,6 +122,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_7"
+                    android:tag="@string/_7"
                     />
 
                 <Button
@@ -124,6 +131,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/multiplication"
+                    android:tag="@string/multiplication"
                     />
 
 
@@ -142,6 +150,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_1"
+                    android:tag="@string/_1"
                     />
 
                 <Button
@@ -150,6 +159,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_2"
+                    android:tag="@string/_2"
                     />
 
 
@@ -160,6 +170,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_3"
+                    android:tag="@string/_3"
                     />
 
                 <Button
@@ -168,6 +179,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/subtraction"
+                    android:tag="@string/subtraction"
                     />
 
                 <Button
@@ -176,6 +188,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/adition"
+                    android:tag="@string/adition"
                     />
 
             </LinearLayout>
@@ -193,6 +206,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_0"
+                    android:tag="@string/_0"
                     />
                 <Button
                     android:id="@+id/button_dot"
@@ -200,6 +214,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/dot"
+                    android:tag="@string/dot"
                     />
 
 
@@ -210,13 +225,12 @@
                     android:layout_height="match_parent"
                     android:text="@string/ver_ultima_conta"/>
 
-                <Button
+                <!--<Button
                     android:id="@+id/button_history"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="@string/ver_historico"
-                    android:onClick="onClickHistory"/>
+                    android:text="@string/ver_historico"/>-->
 
                 <Button
                     android:id="@+id/button_equals"

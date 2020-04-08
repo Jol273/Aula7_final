@@ -1,6 +1,5 @@
 package com.example.aula7_final
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,19 +13,14 @@ import kotlinx.android.synthetic.main.fragment_calculator.*
 import net.objecthunter.exp4j.ExpressionBuilder
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class CalculatorFragment : Fragment() {
 
     private val TAG = MainActivity::class.java.simpleName
-
     val operations = mutableListOf(Operation("1+1",2.0),Operation("2+3",5.0))
-
-
     var text = SimpleDateFormat("HH:mm:ss").format(Date())
     private val duration = Toast.LENGTH_SHORT
-
     var lastExpression = ""
 
 
@@ -93,6 +87,11 @@ class CalculatorFragment : Fragment() {
         Log.i(TAG,"o método onDestroy foi invocado")
         super.onDestroy()
     }
+
+    /*@OnClick(R.id.button_history)
+    fun onClickHistory(view: View){
+        NavigationManager.goToHistoryFragment(supportFragmentManager)
+    }*/
 
 
 }

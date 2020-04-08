@@ -178,7 +178,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         super.onBackPressed()
     }
 
-
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         text_visor.text = savedInstanceState.getString(VISOR_KEY)
     }
@@ -188,19 +187,18 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         super.onSaveInstanceState(outState, outPersistentState)
     }
 
-    @OnClick(R.id.button_history)
-    fun onClickHistory(view: View){
-        NavigationManager.goToHistoryFragment(supportFragmentManager)
-        view.id.toString()
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.nav_calculator -> NavigationManager.goToCalculatorFragment(supportFragmentManager)
+            R.id.nav_history -> NavigationManager.goToHistoryFragment(supportFragmentManager)
+
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
 
-
+    /*@OnClick(R.id.button_history)
+    fun onClickHistory(view: View){
+        NavigationManager.goToHistoryFragment(supportFragmentManager)
+    }*/
 }

@@ -19,7 +19,7 @@ abstract class NavigationManager{
         }
 
         fun goToHistoryFragment(fm: FragmentManager){
-            placeFragment(fm, HistoryActivity())
+            placeFragment(fm, HistoryFragment())
         }
     }
 }
